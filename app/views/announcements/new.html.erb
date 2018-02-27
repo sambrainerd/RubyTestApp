@@ -10,7 +10,10 @@
     <%= f.text_area :details %>
   </p>
   <p>
-  <%= f.label :priority %><br />
-  <%= f.collection_select :priority, AnnouncementPriority.order(:announcement_priority), :id, :announcement_priority, include_blank: false %>
+    <%= f.label :priority %><br />
+    <%= f.collection_select :priority, AnnouncementPriority.order(:id), :announcement_priority, :announcement_priority, include_blank: false %>
+  </p>
+  <p>
+    <%= f.submit %>
   </p>
 <% end %>
