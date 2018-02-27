@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226145053) do
+ActiveRecord::Schema.define(version: 20180227053310) do
+
+  create_table "announcement_priorities", force: :cascade do |t|
+    t.text "announcement_priority"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "announcements", force: :cascade do |t|
     t.string "announcement"

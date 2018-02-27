@@ -1,0 +1,16 @@
+<h1>Publish an Announcement</h1>
+
+<%= form_for @announcement do |f| %>
+  <p>
+    <%= f.label :announcement %>
+    <%= f.text_field :announcement %>
+  </p>
+  <p>
+    <%= f.label :details %>
+    <%= f.text_area :details %>
+  </p>
+  <p>
+  <%= f.label :priority %><br />
+  <%= f.collection_select :priority, AnnouncementPriority.order(:announcement_priority), :id, :announcement_priority, include_blank: false %>
+  </p>
+<% end %>
