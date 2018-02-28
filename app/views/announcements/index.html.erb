@@ -1,0 +1,22 @@
+<h1> Listing all Annoucements </h1>
+
+<p>
+<%= button_to "Create New Annoucement", new_announcement_path, :method => :get %>
+</p>
+
+<table>
+  <tr>
+    <th>Annoucement</th>
+    <th>Details</th>
+    <th>Priority</th>
+  </tr>
+
+  <% @announcementsbase.each do |announcement| %>
+  <tr>
+    <td><%= announcement.announcement %></td>
+    <td><%= announcement.details %></td>
+    <td><%= announcement.priority %></td>
+    <td><%= button_to "Edit Announcement", edit_announcement_path(announcement), :method => :get %></td>
+  </tr>
+  <% end %>
+</table>

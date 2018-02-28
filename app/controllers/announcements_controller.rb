@@ -1,4 +1,8 @@
 class AnnouncementsController < ApplicationController
+  def index
+    @announcementsbase = Announcement.all
+  end
+  
   def new
     @announcement = Announcement.new
   end
