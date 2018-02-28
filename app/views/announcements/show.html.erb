@@ -1,0 +1,15 @@
+<h1> Showing selected announcement</h1>
+
+<p>
+  Title: <%= @announcement.announcement %>
+</p>
+
+<p>
+  Details: <%= @announcement.details%>
+</p>
+
+<p>
+  Priority: <%= @announcement.priority%>
+</p>
+
+<%= button_to "Create Another Annoucement", new_announcement_path, :method => :get %>

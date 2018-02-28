@@ -1,5 +1,14 @@
 <h1>Publish an Announcement</h1>
 
+<% if @announcement.errors.any? %>
+<h2> The following errors prevented the announcement from being posted </h2>
+  <ul>
+    <% @announcement.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @announcement do |f| %>
   <p>
     <%= f.label :announcement %>
