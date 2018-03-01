@@ -16,6 +16,7 @@
     <td><%= announcement.announcement %></td>
     <td><%= announcement.details %></td>
     <td><%= announcement.priority %></td>
+    <td><%= button_to "Show Announcement", announcement_path(announcement), :method => :get %></td>
     <td><%= button_to "Edit Announcement", edit_announcement_path(announcement), :method => :get %></td>
   </tr>
   <% end %>
