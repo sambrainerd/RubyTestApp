@@ -1,0 +1,26 @@
+<% if @announcement.errors.any? %>
+<h2> The following errors prevented the announcement from being posted </h2>
+  <ul>
+    <% @announcement.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @announcement do |f| %>
+  <p>
+    <%= f.label :announcement %>
+    <%= f.text_field :announcement %>
+  </p>
+  <p>
+    <%= f.label :details %>
+    <%= f.text_area :details %>
+  </p>
+  <p>
+    <%= f.label :priority %><br />
+    <%= f.collection_select :priority, AnnouncementPriority.order(:id), :announcement_priority, :announcement_priority, include_blank: false %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

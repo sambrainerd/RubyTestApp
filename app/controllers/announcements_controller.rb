@@ -35,6 +35,13 @@ class AnnouncementsController < ApplicationController
     @announcement = Announcement.find(params[:id])
   end
 
+  def destroy
+    @announcement = Announcement.find(params[:id])
+    @announcement.destroy
+    flash[:notice] = "Article was successfully deleted"
+    redirect_to announcements_path
+  end
+
   private
     def announcement_params
       params.required(:announcement).permit(:announcement,:details,:priority)

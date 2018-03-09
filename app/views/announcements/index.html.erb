@@ -18,6 +18,7 @@
     <td><%= announcement.priority %></td>
     <td><%= button_to "Show Announcement", announcement_path(announcement), :method => :get %></td>
     <td><%= button_to "Edit Announcement", edit_announcement_path(announcement), :method => :get %></td>
+    <td><%= button_to "Delete Announcement", announcement_path(announcement), :method => :delete, data: {confirm: "Are you sure?"} %></td>
   </tr>
   <% end %>
 </table>
