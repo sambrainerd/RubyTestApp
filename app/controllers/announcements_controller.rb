@@ -1,4 +1,5 @@
 class AnnouncementsController < ApplicationController
+  before_action :set_announcement, only: [:edit,:update,:show,:destroy]
   def index
     @announcementsbase = Announcement.all
   end
@@ -43,6 +44,9 @@ class AnnouncementsController < ApplicationController
   end
 
   private
+    def set_announcement
+      @announcement = Announcement.find(params[:id])
+    end
     def announcement_params
       params.required(:announcement).permit(:announcement,:details,:priority)
     end
